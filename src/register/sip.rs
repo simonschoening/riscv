@@ -53,15 +53,3 @@ impl Sip {
 }
 
 read_csr_as!(Sip, 0x144, __read_sip);
-set!(0x144, __set_sie);
-clear!(0x144, __clear_sie);
-
-set_clear_csr!(
-    /// User Software Interrupt Enable
-    , set_usoft, clear_usoft, 1 << 0);
-set_clear_csr!(
-    /// Supervisor Software Interrupt Enable
-    , set_ssoft, clear_ssoft, 1 << 1);
-set_clear_csr!(
-    /// User External Interrupt Enable
-    , set_uext, clear_uext, 1 << 8);
